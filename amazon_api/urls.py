@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from amazon_products import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('amazon/', include('amazon_products.urls') )
+    path('amazon/', include('amazon_products.urls') ),
+    path('', views.homepage, name='homepage'),
 ]
